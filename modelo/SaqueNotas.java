@@ -14,18 +14,18 @@ public class SaqueNotas {
     BancoDados conexao;
     
     public SaqueNotas(){
-        conexao = new BancoDados();
+        conexao = BancoDados.instanciar();
+        
     }
     
     public void sacar_valor(double valor){
         double saldo = conexao.saldo_atual();
-        System.out.printf("Realizando saque: $d, sendo saldo: %d", valor, saldo);
+        System.out.println("Realizando saque: " + valor +  ", sendo saldo: " + saldo);
         
         if(valor > 0){
             if(saldo >= valor){
-                 // calculo de notas do saque..
-                 System.out.printf("Sacando: R$ %d", valor);
                  saldo = saldo - valor;
+                 System.out.println("O saldo atual agora é: " + saldo);
             }else{
                 System.out.println("Não há saldo suficiente para sacar o valor informado.");
             }

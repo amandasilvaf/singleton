@@ -14,12 +14,13 @@ public class Cadastro {
     BancoDados conexao;
     
     public Cadastro(){
-        conexao = new BancoDados();
+        conexao = BancoDados.instanciar();
+
     }
     
     public void cadastrar(String nome){
         conexao.cadastrar(nome);
-        System.out.printf("%s cadastrado(a) com sucesso!", nome);
+        System.out.printf("%s cadastrado(a) com sucesso!\n", nome);
     }
     
 }

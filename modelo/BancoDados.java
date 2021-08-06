@@ -11,12 +11,19 @@ package ads3.modelo;
  */
 public class BancoDados {
     
-    public BancoDados(){
-        
+    private static BancoDados INSTANCIA = new BancoDados();
+    
+    private BancoDados(){
+        System.out.println("Criando novo Banco de Dados.");
+        System.out.println("Conectando a base de dados");
     }
     
-    public void conecte(){ 
-        System.out.println("Conectando a base de dados");
+    public static BancoDados instanciar(){ 
+        return INSTANCIA;
+    }
+    
+    public void conecte(){
+       
     }
     
     public double saldo_atual(){
@@ -24,7 +31,7 @@ public class BancoDados {
     }
     
     public void cadastrar(String nome){
-        System.out.printf("cadastrando $s no banco de dados.", nome);
+        System.out.println("cadastrando" + nome +  " no banco de dados.");
     }
     
 }

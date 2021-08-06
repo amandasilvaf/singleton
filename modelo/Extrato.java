@@ -14,13 +14,14 @@ public class Extrato {
     BancoDados conexao;
     
     public Extrato(){
-        conexao = new BancoDados();
+        conexao = BancoDados.instanciar();
+   
     }
     
     public void retirar_extrato(String nome){
         double saldo = conexao.saldo_atual();
-        System.out.printf("Extraindo o extrato de $s .", nome );
-        System.out.printf("O valor do saldo atual é: %d", saldo);
+        System.out.println("Extraindo o extrato de " + nome );
+        System.out.println("O valor do saldo atual é: " + saldo);
     }
     
 }
